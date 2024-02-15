@@ -1,5 +1,37 @@
 # Changelog
 
+<a name="0.1.237"></a>
+## 0.1.237 (2024-02-12)
+
+### Fixed
+
+- 🐛 wrong id format [[e2471f9](https://github.com/gmpetrov/databerry/commit/e2471f9b8382a79e664f774b7cb1e305f88d5fb8)]
+
+
+<a name="0.1.236"></a>
+## 0.1.236 (2024-02-12)
+
+### Fixed
+
+- 🐛 use email format [[9aefb84](https://github.com/gmpetrov/databerry/commit/9aefb842e688e03f1f7900c3f0c75d0d4306a561)]
+
+
+<a name="0.1.235"></a>
+## 0.1.235 (2024-02-12)
+
+### Fixed
+
+- 🐛 pass channelExternalId as reference [[50f32fc](https://github.com/gmpetrov/databerry/commit/50f32fc8f53f7720f62761430d247955434b7479)]
+
+
+<a name="0.1.234"></a>
+## 0.1.234 (2024-02-12)
+
+### Fixed
+
+- 🐛 wrong id [[82ccfe0](https://github.com/gmpetrov/databerry/commit/82ccfe0f5093a1e2fec267c204a7677586979bf5)]
+
+
 <a name="0.1.233"></a>
 ## 0.1.233 (2024-02-12)
 

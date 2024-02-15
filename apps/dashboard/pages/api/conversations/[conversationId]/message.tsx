@@ -188,7 +188,7 @@ export const sendMessage = async (
       let _channelExternalId = channelExternalId;
 
       if (!_channelExternalId) {
-        _channelExternalId = cuid();
+        _channelExternalId = `<${cuid()}@mail.chaindesk.ai>`;
         await prisma.conversation.update({
           where: {
             id,
@@ -201,7 +201,8 @@ export const sendMessage = async (
 
       const subject = title || organization?.name || '💌 Request';
       const sent = await mailer.sendMail({
-        inReplyTo: channelExternalId!,
+        inReplyTo: _channelExternalId!,
+        references: [_channelExternalId],
         from: {
           name: _inbox?.fromName!,
           address:
