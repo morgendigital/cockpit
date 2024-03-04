@@ -7,6 +7,7 @@ import cuid from 'cuid';
 import mime from 'mime-types';
 import { GetServerSidePropsContext } from 'next/types';
 import { useSession } from 'next-auth/react';
+import { useTranslation } from 'next-i18next';
 import { ReactElement } from 'react';
 import * as React from 'react';
 import { useForm } from 'react-hook-form';
@@ -29,6 +30,8 @@ export default function ProfileSettingsPage() {
     isUpdatingProfile: false,
   });
   const { upload, isUploading } = useFileUpload();
+
+  const { t, i18n } = useTranslation('settings');
 
   const methods = useForm<UpdateUserProfileSchema>({
     resolver: zodResolver(UpdateUserProfileSchema),
@@ -104,12 +107,13 @@ export default function ProfileSettingsPage() {
       sx={{
         height: '100%',
       }}
+      gap={4}
     >
       {/* <OrganizationForm /> */}
 
       <SettingCard
-        title="Profile Settings"
-        description="Your personal information and settings."
+        title={t('titleProfil')}
+        description={t('subtitleProfil')}
         cardProps={{
           sx: { maxWidth: 'md', mx: 'auto', width: '100%' },
         }}
@@ -126,7 +130,7 @@ export default function ProfileSettingsPage() {
         >
           <Input
             control={methods.control}
-            label="Email"
+            label={t('mailProfil')}
             value={session?.user?.email || ''}
             disabled
             {...methods.register('email')}
